@@ -19,3 +19,26 @@ if answer == 'yes'.casefold():
 elif answer == 'no'.casefold():
     print("Is your number higher or lower?")
     higherorlower = input(">")
+while answer == 'no'.casefold():
+    if higherorlower == "lower".casefold():
+        upper_bound = guess
+        guess = ((upper_bound - lower_bound) // 2) + lower_bound
+        print(f"Is your number {guess}. Please enter 'Yes' or 'No.")
+        answer = input(">")
+        if answer == 'yes'.casefold():
+            print("I guessed it!")
+            break
+        elif answer == 'no'.casefold():
+            print("Is your number higher or lower?")
+            higherorlower = input(">")
+    elif higherorlower == "higher".casefold():
+        lower_bound = guess
+        guess = (upper_bound - lower_bound) // 2 + lower_bound
+        print(f"Is your number {guess}. Please enter 'Yes' or 'No.")
+        answer = input(">")
+        if answer == 'yes'.casefold():
+            print("I guessed it!")
+            break
+        elif answer == 'no'.casefold():
+            print("Is your number higher or lower?")
+            higherorlower = input(">")
