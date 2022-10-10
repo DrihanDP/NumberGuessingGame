@@ -1,5 +1,5 @@
 # Number guessing Game
-
+count = 1
 print("Please enter the lower bound number (cannot be less than 0)")
 lower_bound = int(input(">"))
 if lower_bound < 0:
@@ -15,18 +15,19 @@ guess = (upper_bound - lower_bound) // 2
 print(f"Is your number {guess}. Please enter 'Yes' or 'No.")
 answer = input(">")
 if answer == 'yes'.casefold():
-    print("I guessed it!")
+    print(f"I guessed it! I guessed it in {count} try")
 elif answer == 'no'.casefold():
     print("Is your number higher or lower?")
     higherorlower = input(">")
 while answer == 'no'.casefold():
+    count += 1
     if higherorlower == "lower".casefold():
         upper_bound = guess
         guess = ((upper_bound - lower_bound) // 2) + lower_bound
         print(f"Is your number {guess}. Please enter 'Yes' or 'No.")
         answer = input(">")
         if answer == 'yes'.casefold():
-            print("I guessed it!")
+            print(f"I guessed it! I guessed it in {count} tries")
             break
         elif answer == 'no'.casefold():
             print("Is your number higher or lower?")
@@ -37,7 +38,7 @@ while answer == 'no'.casefold():
         print(f"Is your number {guess}. Please enter 'Yes' or 'No.")
         answer = input(">")
         if answer == 'yes'.casefold():
-            print("I guessed it!")
+            print(f"I guessed it! I guessed it in {count} tries")
             break
         elif answer == 'no'.casefold():
             print("Is your number higher or lower?")
